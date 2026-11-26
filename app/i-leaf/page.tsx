@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import JsonLd from "@/app/_components/JsonLd";
+import { ILEAF } from "@/lib/schema";
+import { shareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "ไอลีฟ (I-LEAF) บ้านเดี่ยว บ้านแฝด ทาวน์โฮม ทุกทำเล",
   description:
     "โครงการไอลีฟ (I-LEAF) ทุกทำเล พระราม 2 รามอินทรา ประชาอุทิศ รังสิต ลำลูกกา เทพารักษ์ ราชพฤกษ์ เศรษฐกิจ พัทยา ภูเก็ต ทาวน์โฮมเริ่ม 2.19 ล้านบาท บ้านแฝดเริ่ม 3.29 ล้านบาท บ้านเดี่ยวเริ่ม 4.29 ล้านบาท",
   alternates: { canonical: "/i-leaf" },
+  openGraph: shareImage("/home/hero/ileaf-townhome-wide.webp", "ภาพจำลองทาวน์โฮมไอลีฟ (I-LEAF)"),
 };
 
 // จาก 00-Context/01-Company.md
@@ -24,6 +28,7 @@ const LOCATIONS = [
 export default function ILeafPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
+      <JsonLd data={ILEAF} />
       <h1 className="text-4xl">ไอลีฟ (I-LEAF)</h1>
       <p className="mt-3 max-w-2xl text-lg">
         บ้านเดี่ยว บ้านแฝด ทาวน์โฮม และอาคารพาณิชย์ ในทำเลที่เดินทางสะดวก

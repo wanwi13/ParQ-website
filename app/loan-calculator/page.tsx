@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/app/_components/JsonLd";
+import { LOAN_CALCULATOR } from "@/lib/schema";
 import LoanCalculator from "./LoanCalculator";
 
 export const metadata: Metadata = {
@@ -9,5 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function LoanCalculatorPage() {
-  return <LoanCalculator />;
+  return (
+    <>
+      <JsonLd data={LOAN_CALCULATOR} />
+      <LoanCalculator />
+    </>
+  );
 }

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/app/_components/Icon";
+import JsonLd from "@/app/_components/JsonLd";
+import { ORGANIZATION } from "@/lib/schema";
 import { CONTACT, PAGES, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -41,6 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="th" className={`${dbHeavent.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <JsonLd data={ORGANIZATION} />
         <header className="border-b border-kanda-orange-light">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-2">
             {/* โลโก้มีพื้นขาวรอบ ๆ เยอะ ใช้กรอบตัดให้เห็นเฉพาะส่วนตัวอักษร ไม่ยืด ไม่เปลี่ยนไฟล์ */}

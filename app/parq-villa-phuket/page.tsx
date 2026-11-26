@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import JsonLd from "@/app/_components/JsonLd";
+import { PARQ } from "@/lib/schema";
+import { shareImage } from "@/lib/site";
 
 // ParQ เขียนภาษาอังกฤษเป็นหลัก (ลูกค้าต่างชาติและเอเจนต์) ตาม 02-Brand.md
 export const metadata: Metadata = {
@@ -6,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "22 private pool villas on about 12 rai in Thalang, Phuket. 3 master bedrooms, 368–457 sq.m. living space, around 10 minutes to Bang Tao and Layan. Starting from THB 24.9 million.",
   alternates: { canonical: "/parq-villa-phuket" },
+  openGraph: shareImage("/home/hero/parq-garden-wide.webp", "ParQ Villa Phuket shared garden and stream"),
 };
 
 const FACTS = [
@@ -20,6 +24,7 @@ const FACTS = [
 export default function ParQPage() {
   return (
     <div lang="en" className="mx-auto max-w-5xl px-4 py-12">
+      <JsonLd data={PARQ} />
       <p className="text-kanda-orange">Live in Harmony with Nature</p>
       <h1 className="mt-2 text-4xl">ParQ Villa Phuket</h1>
       <p className="mt-3 max-w-2xl text-lg">Designed for Privacy. Created for Living.</p>

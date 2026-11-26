@@ -16,6 +16,9 @@ const AI_BOTS = [
   "Google-Extended",
   "Applebot-Extended",
   "Meta-ExternalAgent",
+  "Amazonbot",
+  "DuckAssistBot",
+  "MistralAI-User",
   "CCBot",
 ];
 

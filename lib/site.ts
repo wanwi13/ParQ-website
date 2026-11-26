@@ -21,6 +21,16 @@ export const CONTACT = {
   address: "195 ม.5 ถ.พระรามที่ 2 ต.พันท้ายนรสิงห์ อ.เมือง จ.สมุทรสาคร 74000",
 };
 
+// รูปตอนแชร์ลิงก์ (Facebook, LINE) — openGraph ของหน้าย่อยแทนที่ของ layout ทั้งก้อน จึงต้องใส่ siteName/locale ซ้ำ
+export function shareImage(url: string, alt: string) {
+  return {
+    type: "website" as const,
+    locale: "th_TH",
+    siteName: SITE_NAME,
+    images: [{ url, width: 1920, height: 1080, alt }],
+  };
+}
+
 // ทุกหน้าของเว็บ — เพิ่มหน้าใหม่ต้องเพิ่มที่นี่ด้วย sitemap.xml จะได้ครบ
 export const PAGES = [
   { path: "/", label: "หน้าแรก", priority: 1 },
@@ -28,5 +38,6 @@ export const PAGES = [
   { path: "/parq-villa-phuket", label: "ParQ Villa Phuket", priority: 0.9 },
   { path: "/promotion", label: "โปรโมชัน", priority: 0.8 },
   { path: "/loan-calculator", label: "คำนวณผ่อนบ้าน", priority: 0.8 },
+  { path: "/faq", label: "คำถามที่พบบ่อย", priority: 0.7 },
   { path: "/contact", label: "ติดต่อเรา", priority: 0.7 },
 ] as const;
