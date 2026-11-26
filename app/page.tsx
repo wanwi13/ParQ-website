@@ -183,6 +183,34 @@ export default function Home() {
           เพื่อรอยยิ้มของครอบครัว และคนรุ่นต่อๆ ไป กานดาสร้างหมู่บ้านจัดสรรในกรุงเทพฯ และปริมณฑลมากว่า 30 ปี
           อยากให้ทุกบ้านอยู่สบาย ดูแลง่าย และเป็นมิตรกับสิ่งแวดล้อมค่ะ 🏡
         </p>
+
+        {/* ทางลัดไปหน้าคำนวณผ่อนบ้าน */}
+        <Link
+          href="/loan-calculator"
+          className="group mt-8 flex max-w-xl items-center gap-5 rounded-2xl border-2 border-kanda-orange-light p-5 transition hover:border-kanda-orange hover:shadow-md"
+        >
+          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-kanda-orange text-white">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-9 w-9"
+            >
+              <rect x="4" y="2" width="16" height="20" rx="2" />
+              <line x1="8" y1="6" x2="16" y2="6" />
+              <line x1="16" y1="14" x2="16" y2="18" />
+              <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
+            </svg>
+          </span>
+          <span>
+            <span className="block text-2xl text-kanda-black group-hover:text-kanda-orange">คำนวณผ่อนบ้าน</span>
+            <span className="block">ผ่อนเดือนละเท่าไร · เงินเดือนเท่านี้ซื้อบ้านได้แค่ไหน ลองคำนวณดูได้เลยค่ะ →</span>
+          </span>
+        </Link>
       </section>
 
       {/* แบบบ้านไอลีฟ */}

@@ -27,5 +27,6 @@ export const PAGES = [
   { path: "/i-leaf", label: "ไอลีฟ (I-LEAF)", priority: 0.9 },
   { path: "/parq-villa-phuket", label: "ParQ Villa Phuket", priority: 0.9 },
   { path: "/promotion", label: "โปรโมชัน", priority: 0.8 },
+  { path: "/loan-calculator", label: "คำนวณผ่อนบ้าน", priority: 0.8 },
   { path: "/contact", label: "ติดต่อเรา", priority: 0.7 },
 ] as const;
