@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   description:
     "กานดา พร็อพเพอร์ตี้ ผู้พัฒนาหมู่บ้านจัดสรรในกรุงเทพฯ และปริมณฑลมากว่า 30 ปี บ้านเดี่ยว บ้านแฝด ทาวน์โฮม ไอลีฟ (I-LEAF) เพื่อรอยยิ้มของครอบครัว และคนรุ่นต่อๆ ไป",
   applicationName: SITE_NAME,
+  // ยืนยันเจ้าของเว็บกับ Google Search Console
+  verification: { google: "xmGWNae7AK3scMWs2tYRcIWd6E6mISjzzX-WWd4cO1Q" },
   openGraph: {
     type: "website",
     locale: "th_TH",
