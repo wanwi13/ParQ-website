@@ -27,7 +27,7 @@ export default function ILeafPage() {
       <h1 className="text-4xl">ไอลีฟ (I-LEAF)</h1>
       <p className="mt-3 max-w-2xl text-lg">
         บ้านเดี่ยว บ้านแฝด ทาวน์โฮม และอาคารพาณิชย์ ในทำเลที่เดินทางสะดวก
-        มาลองเดินดูบ้านตัวอย่างด้วยกันนะคะ 😊
+        มาลองเดินดูบ้านตัวอย่างด้วยกันนะคะ
       </p>
       <p className="mt-4 text-lg">
         ทาวน์โฮม <span className="font-bold text-kanda-orange">เริ่ม 2.19 ล้านบาท</span> · บ้านแฝด{" "}

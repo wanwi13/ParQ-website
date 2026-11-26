@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Icon from "@/app/_components/Icon";
 import { CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,10 +24,14 @@ export default function PromotionPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <h1 className="text-4xl">โปรโมชัน</h1>
-      <p className="mt-3 text-lg">สิทธิพิเศษสำหรับคุณลูกค้าที่สนใจบ้านไอลีฟค่ะ 💚</p>
+      <p className="mt-3 text-lg">สิทธิพิเศษสำหรับคุณลูกค้าที่สนใจบ้านไอลีฟค่ะ</p>
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">
         {PROMOTIONS.map((p) => (
-          <li key={p} className="rounded-lg border border-kanda-orange-light p-4 text-lg text-kanda-black">
+          <li
+            key={p}
+            className="flex items-center gap-3 rounded-lg border border-kanda-orange-light p-4 text-lg text-kanda-black"
+          >
+            <Icon name="checkCircle" className="h-6 w-6 text-kanda-orange" />
             {p}
           </li>
         ))}

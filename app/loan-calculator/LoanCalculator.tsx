@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Icon from "@/app/_components/Icon";
 
 // ย้ายมาจาก 10-Project/loan-calculator (โลโก้และ footer ใช้ของ layout เว็บแทน)
 
@@ -105,7 +106,7 @@ export default function LoanCalculator() {
           คำนวณ<span className="text-kanda-orange">ผ่อนบ้าน</span>
         </h1>
         <p className="mt-2 text-lg">
-          ลองใส่ตัวเลขดูนะคะ จะได้วางแผนบ้านหลังใหม่ให้ครอบครัวได้สบายใจค่ะ 🏡
+          ลองใส่ตัวเลขดูนะคะ จะได้วางแผนบ้านหลังใหม่ให้ครอบครัวได้สบายใจค่ะ
         </p>
         <div className="mt-6 h-px w-24 bg-kanda-orange/40" />
       </header>
@@ -146,13 +147,13 @@ export default function LoanCalculator() {
                   key={p.label}
                   type="button"
                   onClick={() => setPrice(p.price)}
-                  className={`rounded-full border px-4 py-1.5 text-base transition ${
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-base transition ${
                     fits
                       ? "border-green-600 bg-green-50 text-green-700 hover:bg-green-100"
                       : "border-neutral-300 text-neutral-400"
                   }`}
                 >
-                  {fits ? "✓" : "✗"} {p.label} · เริ่ม {(p.price / 1_000_000).toFixed(2)} ล้าน
+                  <Icon name={fits ? "check" : "x"} className="h-4 w-4" /> {p.label} · เริ่ม {(p.price / 1_000_000).toFixed(2)} ล้าน
                 </button>
               );
             })}
@@ -236,7 +237,7 @@ export default function LoanCalculator() {
 
           <p className="text-sm leading-relaxed">
             * ตัวเลขนี้เป็นการคำนวณเบื้องต้นเท่านั้นนะคะ ยอดผ่อนและวงเงินจริงขึ้นอยู่กับอัตราดอกเบี้ย
-            และเงื่อนไขของแต่ละธนาคาร สอบถามรายละเอียดเพิ่มเติมกับเจ้าหน้าที่ได้เลยค่ะ 😊
+            และเงื่อนไขของแต่ละธนาคาร สอบถามรายละเอียดเพิ่มเติมกับเจ้าหน้าที่ได้เลยค่ะ
           </p>
         </section>
       </div>

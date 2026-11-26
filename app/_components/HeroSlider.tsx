@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import Icon from "@/app/_components/Icon";
 
 // ภาพแต่ละสไลด์ครอปไว้ 2 กรอบ: wide 16:9 (จอกว้าง) · tall 4:5 (มือถือ) — srcSet มาจาก getImageProps ใน page.tsx
 export type HeroImage = {
@@ -208,9 +209,10 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
               type="button"
               onClick={() => setUserPaused((p) => !p)}
               aria-label={userPaused ? "เล่นสไลด์ต่อ" : "หยุดสไลด์"}
-              className="ml-auto text-sm text-white/80 hover:text-white"
+              className="ml-auto inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white"
             >
-              {userPaused ? "▶ เล่น" : "❚❚ หยุด"}
+              <Icon name={userPaused ? "play" : "pause"} className="h-3.5 w-3.5 fill-current" />
+              {userPaused ? "เล่น" : "หยุด"}
             </button>
           </div>
         </div>

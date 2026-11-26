@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
+import Icon from "@/app/_components/Icon";
 import { CONTACT, PAGES, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -67,10 +68,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="mx-auto grid max-w-5xl gap-2 px-4 py-8 text-sm">
             <p className="text-kanda-black">บริษัท กานดา พร็อพเพอร์ตี้ จำกัด (KANDA PROPERTY)</p>
             <p>{CONTACT.address}</p>
-            <p className="flex flex-wrap gap-x-5">
-              <a href={CONTACT.phoneHref} className="hover:text-kanda-orange">📞 {CONTACT.phone}</a>
-              <a href={CONTACT.line} className="hover:text-kanda-orange">💬 LINE</a>
-              <a href={CONTACT.facebook} className="hover:text-kanda-orange">📘 Facebook</a>
+            <p className="mt-1 flex flex-wrap gap-x-6 gap-y-2">
+              <a href={CONTACT.phoneHref} className="inline-flex items-center gap-2 hover:text-kanda-orange">
+                <Icon name="phone" className="h-4 w-4 text-kanda-orange" /> {CONTACT.phone}
+              </a>
+              <a href={CONTACT.line} className="inline-flex items-center gap-2 hover:text-kanda-orange">
+                <Icon name="chat" className="h-4 w-4 text-kanda-orange" /> LINE
+              </a>
+              <a href={CONTACT.facebook} className="inline-flex items-center gap-2 hover:text-kanda-orange">
+                <Icon name="facebook" className="h-4 w-4 text-kanda-orange" /> Facebook
+              </a>
             </p>
           </div>
         </footer>

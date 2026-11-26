@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import Icon, { type IconName } from "@/app/_components/Icon";
 import { CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -8,21 +10,43 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+const link = "text-kanda-orange hover:underline";
+
+const ROWS: { icon: IconName; label: string; value: ReactNode }[] = [
+  { icon: "phone", label: "โทร", value: <a href={CONTACT.phoneHref} className={link}>{CONTACT.phone}</a> },
+  { icon: "chat", label: "LINE", value: <a href={CONTACT.line} className={link}>{CONTACT.line}</a> },
+  { icon: "facebook", label: "Facebook", value: <a href={CONTACT.facebook} className={link}>facebook.com/kd.co.th</a> },
+  {
+    icon: "pin",
+    label: "ที่อยู่",
+    value: (
+      <>
+        บริษัท กานดา พร็อพเพอร์ตี้ จำกัด
+        <br />
+        {CONTACT.address}
+      </>
+    ),
+  },
+];
+
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <h1 className="text-4xl">ติดต่อเรา</h1>
-      <p className="mt-3 text-lg">สนใจเข้าชมบ้านตัวอย่าง ทักมาได้เลยนะคะ ยินดีดูแลทุกท่านค่ะ 😊</p>
+      <p className="mt-3 text-lg">สนใจเข้าชมบ้านตัวอย่าง ทักมาได้เลยนะคะ ยินดีดูแลทุกท่านค่ะ</p>
 
-      <dl className="mt-8 grid gap-4 text-lg sm:grid-cols-[8rem_1fr]">
-        <dt className="text-kanda-black">โทร</dt>
-        <dd><a href={CONTACT.phoneHref} className="text-kanda-orange hover:underline">{CONTACT.phone}</a></dd>
-        <dt className="text-kanda-black">LINE</dt>
-        <dd><a href={CONTACT.line} className="text-kanda-orange hover:underline">{CONTACT.line}</a></dd>
-        <dt className="text-kanda-black">Facebook</dt>
-        <dd><a href={CONTACT.facebook} className="text-kanda-orange hover:underline">facebook.com/kd.co.th</a></dd>
-        <dt className="text-kanda-black">ที่อยู่</dt>
-        <dd>บริษัท กานดา พร็อพเพอร์ตี้ จำกัด<br />{CONTACT.address}</dd>
+      <dl className="mt-8 grid gap-5 text-lg sm:grid-cols-[10rem_1fr]">
+        {ROWS.map((r) => (
+          <div key={r.label} className="contents">
+            <dt className="flex items-center gap-3 text-kanda-black">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-kanda-orange/10 text-kanda-orange">
+                <Icon name={r.icon} />
+              </span>
+              {r.label}
+            </dt>
+            <dd className="self-center">{r.value}</dd>
+          </div>
+        ))}
       </dl>
     </div>
   );

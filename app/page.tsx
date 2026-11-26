@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import HeroSlider, { type HeroImage, type HeroSlide } from "@/app/_components/HeroSlider";
+import Icon from "@/app/_components/Icon";
 import { CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -181,7 +182,7 @@ export default function Home() {
         <h1 className="mt-2 text-4xl sm:text-5xl">บ้านที่คิดเผื่อชีวิตจริง</h1>
         <p className="mt-4 max-w-2xl text-lg">
           เพื่อรอยยิ้มของครอบครัว และคนรุ่นต่อๆ ไป กานดาสร้างหมู่บ้านจัดสรรในกรุงเทพฯ และปริมณฑลมากว่า 30 ปี
-          อยากให้ทุกบ้านอยู่สบาย ดูแลง่าย และเป็นมิตรกับสิ่งแวดล้อมค่ะ 🏡
+          อยากให้ทุกบ้านอยู่สบาย ดูแลง่าย และเป็นมิตรกับสิ่งแวดล้อมค่ะ
         </p>
 
         {/* ทางลัดไปหน้าคำนวณผ่อนบ้าน */}
@@ -190,26 +191,16 @@ export default function Home() {
           className="group mt-8 flex max-w-xl items-center gap-5 rounded-2xl border-2 border-kanda-orange-light p-5 transition hover:border-kanda-orange hover:shadow-md"
         >
           <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-kanda-orange text-white">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-9 w-9"
-            >
-              <rect x="4" y="2" width="16" height="20" rx="2" />
-              <line x1="8" y1="6" x2="16" y2="6" />
-              <line x1="16" y1="14" x2="16" y2="18" />
-              <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
-            </svg>
+            <Icon name="calculator" className="h-9 w-9" />
           </span>
-          <span>
+          <span className="flex-1">
             <span className="block text-2xl text-kanda-black group-hover:text-kanda-orange">คำนวณผ่อนบ้าน</span>
-            <span className="block">ผ่อนเดือนละเท่าไร · เงินเดือนเท่านี้ซื้อบ้านได้แค่ไหน ลองคำนวณดูได้เลยค่ะ →</span>
+            <span className="block">ผ่อนเดือนละเท่าไร · เงินเดือนเท่านี้ซื้อบ้านได้แค่ไหน ลองคำนวณดูได้เลยค่ะ</span>
           </span>
+          <Icon
+            name="arrowRight"
+            className="h-6 w-6 text-kanda-orange transition group-hover:translate-x-1"
+          />
         </Link>
       </section>
 
@@ -342,16 +333,19 @@ export default function Home() {
       {/* ติดต่อ */}
       <section className="mx-auto max-w-5xl px-4 py-14 text-center">
         <h2 className="text-3xl">นัดชมบ้านตัวอย่าง</h2>
-        <p className="mt-2">อยากลองเดิน ลองใช้พื้นที่จริง ทักมาได้เลยนะคะ ยินดีดูแลทุกท่านค่ะ 😊</p>
+        <p className="mt-2">อยากลองเดิน ลองใช้พื้นที่จริง ทักมาได้เลยนะคะ ยินดีดูแลทุกท่านค่ะ</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <a href={CONTACT.line} className="rounded-full bg-kanda-orange px-6 py-2 text-white hover:opacity-90">
-            💬 แชต LINE
+          <a
+            href={CONTACT.line}
+            className="inline-flex items-center gap-2 rounded-full bg-kanda-orange px-6 py-2 text-white hover:opacity-90"
+          >
+            <Icon name="chat" /> แชต LINE
           </a>
           <a
             href={CONTACT.phoneHref}
-            className="rounded-full border border-kanda-gray px-6 py-2 text-kanda-black hover:border-kanda-orange"
+            className="inline-flex items-center gap-2 rounded-full border border-kanda-gray px-6 py-2 text-kanda-black hover:border-kanda-orange hover:text-kanda-orange"
           >
-            📞 โทร {CONTACT.phone}
+            <Icon name="phone" /> โทร {CONTACT.phone}
           </a>
         </div>
       </section>
