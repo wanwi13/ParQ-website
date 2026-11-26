@@ -2,6 +2,9 @@
 
 # เว็บไซต์บริษัท Kanda
 
+เว็บจริง: https://parq-website-liard.vercel.app
+GitHub: https://github.com/wanwi13/ParQ-website (Vercel deploy เองทุกครั้งที่ push branch main)
+
 - ข้อมูลราคา โปรโมชัน ทำเล: คัดมาจาก `../../00-Context/01-Company.md` · แก้ที่นั่นก่อน แล้วค่อยแก้ในหน้าเว็บ
 - สี ฟอนต์ น้ำเสียง: `../../00-Context/02-Brand.md` (สีอยู่ใน `app/globals.css` · ฟอนต์ DB Heavent ใน `app/fonts/`)
 - หน้าใหม่ทุกหน้า: ต้องมี `metadata` (title + description + canonical) ใน page.tsx และเพิ่มใน `PAGES` ที่ `lib/site.ts` (sitemap.xml ดึงจากตรงนั้น)
